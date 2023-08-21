@@ -38,9 +38,11 @@ while hra_bezi and zivoty >= 0:
         # TODO pokud uzivatel uhadne pismeno
         for index, symbol in enumerate(slovo):
 
-        if symbol == hadani:
-            tajemka[index-1] = hadani
+            if symbol == hadani:
+                tajemka[index] = hadani
 
+        if "_" not in tajemka:
+            hra_bezi - False
 
         print("Uhadl jsi pismenko:")
     else:
