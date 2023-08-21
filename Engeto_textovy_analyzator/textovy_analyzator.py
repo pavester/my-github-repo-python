@@ -88,4 +88,4 @@ if( jmeno in registrovany_uzivatel.keys()):
         print()
 
 else:
-        print("unregistered user, terminating the program..")    
+        print("unregistered user, terminating the program.")    
