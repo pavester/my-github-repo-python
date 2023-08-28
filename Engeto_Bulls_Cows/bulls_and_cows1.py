@@ -29,15 +29,19 @@ def game():
     print(code)
     game_is_running  = True
 
+    pocet = 0
 
     while game_is_running:
 
         bulls = 0
         cows = 0
+      
               
         hadani = ask_user_for_code()
         print(f"Tajny cod je: {code}")
         print(f"Uzivatel zadal: {hadani}")   
+
+        pocet += 1
 
         if hadani == code:
             print("Uhádl jsi, gratuluji.")    
@@ -67,7 +71,8 @@ def game():
             print(f"{bulls} bulls, {cows} cows") 
             print(oddelovac)
 
-               
+    print(f"Correct, you've guessed the right number \n in {pocet} guesses!")
 
+               
 
 game()
