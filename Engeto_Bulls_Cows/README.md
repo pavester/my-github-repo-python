@@ -1,1 +1,1 @@
-Adresář pro uložení druhého projektuz v rámci Python akadenie
+Adresář pro uložení druhého projektu v rámci Python akademie
