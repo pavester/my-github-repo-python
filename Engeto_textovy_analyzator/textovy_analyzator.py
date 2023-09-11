@@ -28,12 +28,13 @@ oddelovac = "-" * 40
 jmeno = input("username:")
 heslo = input("password:")
 
-if( jmeno in registrovany_uzivatel.keys()):
+if( jmeno in registrovany_uzivatel.keys()) and heslo == registrovany_uzivatel.get(jmeno):
     print(oddelovac)
     print("Welcome to the app, bob")    
     print("We have 3 texts to be analyzed.")        
     print(oddelovac)    
     volba = (input("Enter a number btw. 1 and 3 to select: "))
+    print(oddelovac)    
 
     if  not volba.isnumeric() or not int(volba) in range(1,4):
         print("You need to enter a NUMBER between 1-3.")    
@@ -44,16 +45,16 @@ if( jmeno in registrovany_uzivatel.keys()):
         rozdeleny_text =  TEXTS[text_volba].split()
 
         for slovo in rozdeleny_text:
+
+            slovo = slovo.strip(",.:;")
+          
             if slovo.istitle():
                 statistika_slov["slovo_title"] += 1
-
-            if slovo.isupper():
-                statistika_slov["slovo_uppercase"] += 1
-
-            if slovo.islower():
+            elif slovo.isupper():
+                statistika_slov["slovo_uppercase"] += 1            
+            elif slovo.islower():
                 statistika_slov["slovo_lowercase"] += 1    
-
-            if slovo.isdigit():
+            elif slovo.isdigit():
                 statistika_slov["slovo_numeric"] += 1                
                 statistika_slov["soucet"] += int(slovo)                       
 
@@ -64,6 +65,8 @@ if( jmeno in registrovany_uzivatel.keys()):
             else:
                 cetnost[delka_slova] += 1      
 
+            if  delka_slova == 7:
+                print(slovo)
 
         print(f"There are {len(rozdeleny_text)} words in the selected text.")
         print(f"There are {statistika_slov['slovo_title']} titlecase words.")
@@ -73,6 +76,7 @@ if( jmeno in registrovany_uzivatel.keys()):
         print(f"The sum of all the numbers {statistika_slov['soucet']}")
 
         # graf
+        print(oddelovac)
         print(f'LEN|    OCCURENCES    |NR.')
         print(oddelovac)
 
@@ -88,4 +92,4 @@ if( jmeno in registrovany_uzivatel.keys()):
         print()
 
 else:
-        print("unregistered user, terminating the program.")    
+        print("unregistered user or invalid password, terminating the program.")    
