@@ -65,9 +65,6 @@ if( jmeno in registrovany_uzivatel.keys()) and heslo == registrovany_uzivatel.ge
             else:
                 cetnost[delka_slova] += 1      
 
-            if  delka_slova == 7:
-                print(slovo)
-
         print(f"There are {len(rozdeleny_text)} words in the selected text.")
         print(f"There are {statistika_slov['slovo_title']} titlecase words.")
         print(f"There are {statistika_slov['slovo_uppercase']} uppercase words.")
