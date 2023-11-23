@@ -24,7 +24,7 @@ def vytvor_soubor():
     ''' zalozi soubor '''
     i=0
 
-    with open("slova.txt", mode="w") as f:
+    with open("slova.txt", mode="w", encoding="utf-8") as f:
         for hodnota in list:
             f.write(list[i])
             f.write("\n")

@@ -74,14 +74,14 @@ if( jmeno in registrovany_uzivatel.keys()) and heslo == registrovany_uzivatel.ge
 
         # graf
         print(oddelovac)
-        print(f'LEN|    OCCURENCES    |NR.')
+        print(f'LEN|  OCCURENCES  |NR.')
         print(oddelovac)
 
         for key, value in sorted(cetnost.items()):
             if key <= 9:   
-                print(f"{key}  {'*' * value } {' ' * (18-value) }| {value}")
+                print(f"  {key}|{'*' * value } {' ' * (13-value)}|{value}")
             else:  
-                print(f"{key}  {'*' * value } {' ' * (17-value) }| {value}")
+                print(f" {key}|{'*' * value } {' ' * (13-value)}|{value}")
 
         print(oddelovac)
         print("Have a nice day.")
@@ -90,3 +90,8 @@ if( jmeno in registrovany_uzivatel.keys()) and heslo == registrovany_uzivatel.ge
 
 else:
         print("unregistered user or invalid password, terminating the program.")    
+
+
+
+
+
